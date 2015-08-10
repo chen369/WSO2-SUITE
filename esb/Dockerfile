@@ -1,13 +1,16 @@
+# rstuven/wso2-esb
+
 FROM justinwalsh/centos-jre7
 
-# Maintainer
-MAINTAINER Byron Munday
+MAINTAINER Ricardo Stuven
 
-RUN wget -P /opt http://dist.wso2.org/maven2/org/wso2/esb/wso2esb/4.8.0/wso2esb-4.8.0.zip && \
-    unzip /opt/wso2esb-4.8.0.zip -d /opt && \
-    rm /opt/wso2esb-4.8.0.zip
+ADD wso2esb-4.8.1.zip /opt/
+
+RUN unzip /opt/wso2esb-4.8.1.zip -d /opt && \
+    mv /opt/wso2esb-4.8.1 /opt/wso2 && \
+    rm /opt/wso2esb-4.8.1.zip
+
+WORKDIR /opt/wso2/
 
 EXPOSE 9443
-CMD ["/opt/wso2esb-4.8.0/bin/wso2server.sh"]
-
-
+CMD ["/opt/wso2/bin/wso2server.sh"]
