@@ -1,6 +1,6 @@
 # rstuven/wso2-apim
 
-FROM chen369/WSO2-SUITE:centos
+FROM chen369/wso2-suite:centos
 
 MAINTAINER Chen Chiu
 
