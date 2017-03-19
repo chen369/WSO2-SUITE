@@ -1,14 +1,13 @@
 # rstuven/wso2-apim
 
-FROM justinwalsh/centos-jre7
+FROM chen369/WSO2-SUITE:centos
 
-MAINTAINER Ricardo Stuven
+MAINTAINER Chen Chiu
 
-ADD wso2am-1.9.0.zip /opt/
-
-RUN unzip /opt/wso2am-1.9.0.zip -d /opt && \
-    mv /opt/wso2am-1.9.0 /opt/wso2 && \
-    rm /opt/wso2am-1.9.0.zip
+RUN wget -q --no-check-certificate -P /opt https://www.dropbox.com/s/e9qivlr2e51hx6a/wso2am-2.1.0.zip && \
+unzip /opt/wso2am-2.1.0.zip -d /opt && \
+    mv /opt/wso2am-2.1.0.zip /opt/wso2 && \
+    rm /opt/wso2am-2.1.0.zip
 
 WORKDIR /opt/wso2/
 
