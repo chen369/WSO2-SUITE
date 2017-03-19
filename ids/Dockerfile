@@ -1,6 +1,6 @@
 # rstuven/wso2-ids
 
-FROM chen369/WSO2-SUITE:centos
+FROM chen369/wso2-suite:centos
 
 MAINTAINER Chen Chiu
 ARG IS_VERSION=${VERSION:-5.3.0}
