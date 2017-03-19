@@ -1,8 +1,8 @@
 # rstuven/wso2-ids
 
-FROM justinwalsh/centos-jre7
+FROM chen369/WSO2-SUITE:centos
 
-MAINTAINER Ricardo Stuven
+MAINTAINER Chen Chiu
 ARG IS_VERSION=${VERSION:-5.3.0}
 RUN wget -P /opt https://s3-us-west-2.amazonaws.com/wso2-stratos/wso2is-${IS_VERSION}.zip && \
     unzip /opt/wso2is-${IS_VERSION}.zip -d /opt && \
